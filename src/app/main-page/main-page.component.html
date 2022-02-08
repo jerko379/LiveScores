@@ -1,3 +1,11 @@
-<div class=" form-group komentar"   *ngFor="let ut of uzivoUtakmice ; let i = index;">
-  <span style="font-size:16px">{{uzivoUtakmice[i]["fixture"]["status"]["elapsed"]}} min  {{uzivoUtakmice[i]["teams"]["home"]["name"]}} {{uzivoUtakmice[i]["goals"]["home"]}} VS {{uzivoUtakmice[i]["goals"]["away"]}} {{uzivoUtakmice[i]["teams"]["away"]["name"]}} </span>
+<div>
+  <table class="table table-hover table-bordered table-dark"><tbody>
+
+
+
+    <tr  *ngFor="let ut of matches ; let i = index;" style="font-size:16px"> <td>{{ut.dateTime.toLocaleTimeString().split(':',2).join(':')}}</td>
+      <td>{{ut.idHome}}  <br> {{ut.idAway}} </td> <td> {{ut.goalsHome}} <br> {{ut.goalsAway}}</td> <tr>
+  </tbody>
+  </table>
+
 </div>
