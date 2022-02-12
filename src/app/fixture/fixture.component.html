@@ -1,0 +1,17 @@
+
+
+
+
+  <div>
+    <table class="table table-hover table-bordered table-dark"><tbody>
+    <tr  *ngFor="let ev of fixture['events'] ; let i = index;" style="font-size:16px">
+      <div *ngIf = "ev['type']=='Card'"><td>{{ev['time']['elapsed']}} min   </td> <td> {{ev['player']['name']}} </td> <td>{{ev['detail']}} </td></div>
+      <div *ngIf = "ev['type']=='Goal'"><td>{{ev['time']['elapsed']}} min   </td> <td> GOAL:  {{ev['player']['name']}}  <span *ngIf="ev['assist']['name']"> ({{ev['assist']['name']}} )</span> </td></div>
+      <div *ngIf = "ev['type']=='subst'"><td>{{ev['time']['elapsed']}} min   </td> <td> IN:  {{ev['player']['name']}} OUT: {{ev['assist']['name']}}  </td> </div>
+    </tr>
+
+    </tbody>
+    </table>
+
+  </div>
+

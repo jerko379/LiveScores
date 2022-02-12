@@ -9,6 +9,7 @@ export class fixture {
   idAway?:string;
   goalsHome?:number;
   goalsAway?:number;
+  timestamp?:number;
 
 }
 export class country {

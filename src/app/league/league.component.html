@@ -1,0 +1,9 @@
+<div>
+  <table class="table table-hover table-bordered table-dark"><tbody>
+  <tr  *ngFor="let l of leagues ; let i = index;" style="font-size:16px">
+    <td> {{l.codeCountry}} <img src="{{l.urlLogo}}" width="40px" alt="">  <br> {{l.id}}  {{l.name}}    </td>
+  </tr>
+  </tbody>
+  </table>
+
+</div>
