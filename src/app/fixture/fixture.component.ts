@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {fixture} from "../main-page/model";
+import {fixture} from "../model";
 
 @Component({
   selector: 'app-fixture',
@@ -8,15 +8,20 @@ import {fixture} from "../main-page/model";
   styleUrls: ['./fixture.component.css']
 })
 export class FixtureComponent implements OnInit {
-
+  datum:string;
   fixture;
   id:number;
+
 
   constructor(private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
     this.id=this.route.snapshot.params['id'];
-    console.log(this.id)
+    this.getFixtureEvents();
+
+  }
+
+  getFixtureEvents() {
     fetch("https://api-football-v1.p.rapidapi.com/v3/fixtures?id="+this.id, {
       "method": "GET",
       "headers": {
@@ -60,7 +65,14 @@ export class FixtureComponent implements OnInit {
         const thisFixture = JSON.parse(result);
         //console.log("fixture: ");
         this.fixture = thisFixture["response"][0];
-        //console.log(this.fixture);
+        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        this.datum=new Date(this.fixture["fixture"]["date"]).toLocaleString();
+
       });
   }
+
+
+
+
+
 }

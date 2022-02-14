@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {fixture, league} from "../main-page/model";
+
+import {fixture, league} from "../model";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-league',
@@ -9,25 +10,23 @@ import {fixture, league} from "../main-page/model";
 })
 export class LeagueComponent implements OnInit {
 
-  leagues:league[] = [];
+  leagues:league[] = [
+  ];
 
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
-    this.getLeagues();
 
-
-
-  }
-
-  getLeagues() {
-
-    this.http.get('/api/users')
+    this.http.get('http://localhost:8081/leagues')
       .subscribe(res => {
-        console.log(res);
+        const lige= JSON.parse(JSON.stringify(res))
+        this.leagues=lige;
+        console.log(this.leagues);
       })
 
 
+
   }
+
 
 }

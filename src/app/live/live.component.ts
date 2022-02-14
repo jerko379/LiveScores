@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {fixture} from "../main-page/model";
+import {fixture} from "../model";
 
 @Component({
   selector: 'app-live',

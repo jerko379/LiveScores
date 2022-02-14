@@ -21,8 +21,18 @@ export class country {
 }
 
 export class league {
-  id?:number;
+  idLeague?:number;
   name?:string;
-  urlLogo?:string;
+  logo?:string;
   codeCountry?:string;
+}
+
+export class user {
+  idUser?:number;
+  privilege:boolean;
+  username:string;
+  name:string;
+  surname:string;
+  email:string;
+  password:string;
 }

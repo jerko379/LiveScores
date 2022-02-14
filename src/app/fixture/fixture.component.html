@@ -1,17 +1,24 @@
+<div class="wrapper">
+  <div>
+  <table id="fixtureScore" class="table  table-borderless table-dark"><tbody>
+    <tr><td colspan="3">{{datum}} </td></tr>
+    <tr><td><img src="{{fixture['teams']['home']['logo']}}" alt=""></td> <td> {{fixture["goals"]["home"]}}     -     {{fixture["goals"]["away"]}} </td> <td> <img src="{{fixture['teams']['away']['logo']}}" alt=""></td></tr>
+    <tr><td> {{fixture['teams']['home']['name']}} </td><td> {{fixture['fixture']['status']['long']}} </td><td> {{fixture['teams']['away']['name']}}</td></tr>
 
+  </table>
 
-
+  </div>
 
   <div>
-    <table class="table table-hover table-bordered table-dark"><tbody>
+    <table id="fixtureEvents" class="table  table-bordered table-dark"><tbody>
     <tr  *ngFor="let ev of fixture['events'] ; let i = index;" style="font-size:16px">
-      <div *ngIf = "ev['type']=='Card'"><td>{{ev['time']['elapsed']}} min   </td> <td> {{ev['player']['name']}} </td> <td>{{ev['detail']}} </td></div>
-      <div *ngIf = "ev['type']=='Goal'"><td>{{ev['time']['elapsed']}} min   </td> <td> GOAL:  {{ev['player']['name']}}  <span *ngIf="ev['assist']['name']"> ({{ev['assist']['name']}} )</span> </td></div>
-      <div *ngIf = "ev['type']=='subst'"><td>{{ev['time']['elapsed']}} min   </td> <td> IN:  {{ev['player']['name']}} OUT: {{ev['assist']['name']}}  </td> </div>
+      <div class="eventRow" *ngIf = "ev['type']=='Card'"><td >{{ev['time']['elapsed']}} min</td> <td >{{ev['player']['name']}}  {{ev['detail']}} </td></div>
+      <div class="eventRow" *ngIf = "ev['type']=='Goal'"><td >{{ev['time']['elapsed']}} min</td> <td>GOAL:  {{ev['player']['name']}} <span *ngIf="ev['assist']['name']"> ( {{ev['assist']['name']}} )  </span>  </td>  </div>
+      <div class="eventRow" *ngIf = "ev['type']=='subst'"><td >{{ev['time']['elapsed']}} min</td> <td >IN:  {{ev['player']['name']}}  OUT:  {{ev['assist']['name']}}</td>   </div>
     </tr>
 
     </tbody>
     </table>
 
   </div>
-
+</div>

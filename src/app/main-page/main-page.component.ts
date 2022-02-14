@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {fixture} from "./model";
+import {fixture} from "../model";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-main-page',
@@ -15,6 +16,7 @@ export class MainPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.getMatches();
     console.log(this.matches)
   }

@@ -8,6 +8,11 @@ import { NavComponent } from './shared/nav/nav.component';
 import { LiveComponent } from './live/live.component';
 import { LeagueComponent } from './league/league.component';
 import { FixtureComponent } from './fixture/fixture.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {AuthModule} from "./auth/auth.module";
+import {AuthRoutingModule} from "./auth/auth-routing.module";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -16,13 +21,19 @@ import { FixtureComponent } from './fixture/fixture.component';
     NavComponent,
     LiveComponent,
     LeagueComponent,
-    FixtureComponent
+    FixtureComponent,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AlertModule
-
+    AlertModule,
+    HttpClientModule,
+    AuthModule,
+    AuthRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

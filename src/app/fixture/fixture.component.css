@@ -1,0 +1,28 @@
+table {
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+.wrapper {
+  background-color: #212529;
+  min-height:100vh;
+}
+#fixtureScore  {
+  width:80%;
+  margin: 0 auto;
+}
+
+#fixtureEvents .eventRow {
+  width:70%;
+  margin : 0 auto;
+}
+#fixtureEvents td {
+  width:10%;
+  margin: 0 auto;
+}
+
+
+
+
+
