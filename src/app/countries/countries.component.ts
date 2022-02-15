@@ -24,4 +24,16 @@ export class CountriesComponent implements OnInit {
 
   }
 
+  delete(idDelete:number) {
+    let dFixture=this.countries[idDelete];
+    this.http.delete('http://localhost:8081/api/countries/' + dFixture["code"])
+      .subscribe(res => {
+        console.log(res['status']);
+        if ( res['status'] == 'OK' ) {
+          this.countries.splice(idDelete,1);
+        }
+
+      })
+  }
+
 }

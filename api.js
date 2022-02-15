@@ -96,6 +96,21 @@ module.exports =function(express,pool){
 
   });
 
+  apiRouter.delete('/countries/:codeCountry', async function(req,res) {
+
+    try {
+
+      let conn = await pool.getConnection();
+      let q = await conn.query('DELETE FROM countries WHERE code = ?', req.params.codeCountry);
+      conn.release();
+      res.json({ status: 'OK', affectedRows :q.affectedRows });
+
+    } catch (e){
+      console.log(e)
+      res.json({ status: 'NOT OK' });
+    }
+  });
+
 
   return apiRouter;
 }

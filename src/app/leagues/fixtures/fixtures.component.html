@@ -9,7 +9,7 @@
        || ut.shortStatus == 'CANC' || ut.shortStatus == 'ABD' || ut.shortStatus == 'AWD'"> {{ut.longStatus}} </span>  <br> {{ut.nameAway}} </td> <td [routerLink]="['../../../fixture',ut.idFixture]"  class="scoreLive"> {{ut.goalsHome}} <br> {{ut.goalsAway}}</td>
       <td><button class="btn btn-danger"  (click)="delete(i)">Delete</button>
       </td>
-      <td><button class="btn btn-warning"  (click)="invalidate(ut)">Invalidate</button>
+      <td  ><button class="btn btn-warning" *ngIf="ut.shortStatus != 'SUSP'"  (click)="invalidate(ut)">Invalidate</button>
       </td>
     </tr>
 

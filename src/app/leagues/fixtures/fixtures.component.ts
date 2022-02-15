@@ -40,8 +40,9 @@ export class FixturesComponent implements OnInit {
     let dFixture=this.fixtures[idDelete];
     this.http.delete('http://localhost:8081/api/fixtures/' + dFixture["idFixture"])
       .subscribe(res => {
-        console.log(res);
-        this.fixtures.splice(idDelete,1);
+        if ( res['status'] == 'OK' ) {
+          this.fixtures.splice(idDelete, 1);
+        }
       })
   }
 
@@ -49,9 +50,10 @@ export class FixturesComponent implements OnInit {
 
     this.http.put('http://localhost:8081/api/fixtures/'  , fixture  )
       .subscribe(res => {
-        fixture['shortStatus']='SUSP';
-        fixture['longStatus']='Match Invalidated';
-        console.log(res);
+        if ( res['status'] == 'OK' ) {
+          fixture['shortStatus']='SUSP';
+          fixture['longStatus']='Match Invalidated';
+        }
       })
   }
 

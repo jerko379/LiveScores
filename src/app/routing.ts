@@ -7,8 +7,8 @@ import {FixtureComponent} from "./fixture/fixture.component";
 import {AuthModule} from "./auth/auth.module";
 import {FixturesComponent} from "./leagues/fixtures/fixtures.component";
 import {CountriesComponent} from "./countries/countries.component";
-import {CountryLeaguesComponent} from "./country/country-leagues/country-leagues.component";
-import {CountryFixturesComponent} from "./country/country-leagues/country-fixtures/country-fixtures.component";
+import {CountryLeaguesComponent} from "./countries/country-leagues/country-leagues.component";
+import {CountryFixturesComponent} from "./countries/country-leagues/country-fixtures/country-fixtures.component";
 
 
 const routes : Route[] = [

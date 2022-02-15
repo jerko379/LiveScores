@@ -15,8 +15,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FixturesComponent } from './leagues/fixtures/fixtures.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CountriesComponent } from './countries/countries.component';
-import { CountryLeaguesComponent } from './country/country-leagues/country-leagues.component';
-import {CountryFixturesComponent} from "./country/country-leagues/country-fixtures/country-fixtures.component";
+import { CountryLeaguesComponent } from './countries/country-leagues/country-leagues.component';
+import {CountryFixturesComponent} from "./countries/country-leagues/country-fixtures/country-fixtures.component";
 
 
 // @ts-ignore
