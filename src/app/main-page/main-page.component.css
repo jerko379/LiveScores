@@ -1,0 +1,12 @@
+
+input[type=date] {
+  background-color: #212529;
+  margin:0 auto;
+  border: #212529;
+  color:slategrey;
+}
+#wrapper {
+  background-color: #212529;
+  min-height: 100vh;
+
+}

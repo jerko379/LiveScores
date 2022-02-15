@@ -65,7 +65,6 @@ export class FixtureComponent implements OnInit {
         const thisFixture = JSON.parse(result);
         //console.log("fixture: ");
         this.fixture = thisFixture["response"][0];
-        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         this.datum=new Date(this.fixture["fixture"]["date"]).toLocaleString();
 
       });

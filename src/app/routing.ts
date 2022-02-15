@@ -5,6 +5,7 @@ import {LiveComponent} from "./live/live.component";
 import {LeagueComponent} from "./league/league.component";
 import {FixtureComponent} from "./fixture/fixture.component";
 import {AuthModule} from "./auth/auth.module";
+import {FixturesComponent} from "./league/fixtures/fixtures.component";
 
 
 const routes : Route[] = [
@@ -12,6 +13,7 @@ const routes : Route[] = [
   {path:'live', component:LiveComponent},
   {path:'leagues', component:LeagueComponent},
   {path:'fixture/:id' , component:FixtureComponent},
+  {path:'leagues/:id' , component:FixturesComponent},
   {path:'auth', loadChildren: () => AuthModule}
 ];
 @NgModule({

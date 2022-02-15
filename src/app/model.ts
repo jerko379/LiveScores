@@ -1,12 +1,14 @@
 export class fixture {
-  id?:number;
+  idFixture?:number;
   dateTime?:Date;
   shortStatus?:string;
   longStatus?:string;
   elapsed?:number;
   leagueid?:number;
-  idHome?:string;
-  idAway?:string;
+  idHome?:number;
+  idAway?:number;
+  nameHome?:string;
+  nameAway?:string;
   goalsHome?:number;
   goalsAway?:number;
   timestamp?:number;
@@ -25,6 +27,8 @@ export class league {
   name?:string;
   logo?:string;
   codeCountry?:string;
+  countryFlag?:string;
+  countryName?:string;
 }
 
 export class user {

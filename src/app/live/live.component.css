@@ -1,0 +1,8 @@
+#wrapper {
+  background-color: #212529;
+  min-height: 100vh;
+
+}
+.scoreLive, .elapsedLive {
+  color:red;
+}

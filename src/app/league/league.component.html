@@ -1,7 +1,7 @@
 <div>
   <table class="table table-hover table-bordered table-dark"><tbody>
-  <tr  *ngFor="let l of leagues ; let i = index;" style="font-size:16px">
-    <td> {{l.codeCountry}} <img src="{{l.logo}}" width="40px" alt="">  <br> {{l.idLeague}}  {{l.name}}    </td>
+  <tr  [routerLink]="[l.idLeague]"  *ngFor="let l of leagues ; let i = index;" style="font-size:16px">
+    <td><img src="{{l.countryFlag}}" width="20px" height="20px" alt=""><br> <br><img src="{{l.logo}}" width="50px"  alt=""> {{l.name}}    </td>
   </tr>
   </tbody>
   </table>

@@ -11,9 +11,13 @@ import { FixtureComponent } from './fixture/fixture.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {AuthModule} from "./auth/auth.module";
 import {AuthRoutingModule} from "./auth/auth-routing.module";
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { FixturesComponent } from './league/fixtures/fixtures.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +26,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     LiveComponent,
     LeagueComponent,
     FixtureComponent,
+    FixturesComponent,
 
 
   ],
@@ -31,11 +36,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AlertModule,
     HttpClientModule,
     AuthModule,
-    AuthRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
+    AuthRoutingModule,
+    NoopAnimationsModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

@@ -69,14 +69,14 @@ export class LiveComponent implements OnInit {
         console.log("rmatches" + rMatches)
         rMatches["response"].forEach((e) => {
           this.matches.push({
-            id: e["fixture"]["id"],
+            idFixture: e["fixture"]["id"],
             dateTime: new Date(e["fixture"]["date"]),
             shortStatus: e["fixture"]["status"]["short"],
             longStatus: e["fixture"]["status"]["long"],
             elapsed: e["fixture"]["status"]["elapsed"],
             leagueid: e["league"]["id"],
-            idHome: e["teams"]["home"]["name"],
-            idAway: e["teams"]["away"]["name"],
+            nameHome: e["teams"]["home"]["name"],
+            nameAway: e["teams"]["away"]["name"],
             goalsHome: e["goals"]["home"],
             goalsAway: e["goals"]["away"],
             timestamp: e["fixture"]["timestamp"]
