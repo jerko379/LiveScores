@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../../shared/auth.service";
 
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   errorMessage : string = '';
   signinForm : FormGroup;
 
-  constructor() {
+  constructor(private auth: AuthService) {
   }
 
   ngOnInit() {
@@ -22,18 +23,20 @@ export class LoginComponent implements OnInit {
       'password' : new FormControl(null, [Validators.required])
     });
 
-    /*this.auth.errorEmitter
+    this.auth.errorEmitter
       .subscribe((error : string) => {
         this.errorMessage = error;
       });
-  */
+
+
+
   }
 
 
 
   onLogin(){
-
-    //this.auth.login(this.signinForm.value);
+    console.log(this.signinForm.value)
+    this.auth.login(this.signinForm.value);
 
   }
 

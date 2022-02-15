@@ -2,11 +2,7 @@ module.exports =function(express,pool){
 
   const apiRouter = express.Router();
 
-  apiRouter.get('/', function (req, res) {
 
-    res.sendFile(path.join(__dirname,'index.html'));
-
-  });
 
   apiRouter.get('/leagues', async function (req,res){
 
@@ -110,6 +106,48 @@ module.exports =function(express,pool){
       res.json({ status: 'NOT OK' });
     }
   });
+
+  apiRouter.route('/users').get(async function(req,res){
+
+    try {
+
+      let conn = await pool.getConnection();
+      let rows = await conn.query('SELECT * FROM users');
+      conn.release();
+      res.json({ status: 'OK', users:rows });
+
+    } catch (e){
+      console.log(e);
+      return res.json({"code" : 100, "status" : "Error with query"});
+
+    }
+
+  }).post(async function(req,res){
+
+    const user = {
+      username : req.body.username,
+      name : req.body.name,
+      surname : req.body.surname,
+      password : req.body.password,
+      email : req.body.email,
+
+
+    };
+
+    try {
+
+      let conn = await pool.getConnection();
+      let q = await conn.query('INSERT INTO users SET ?', user);
+      conn.release();
+      res.json({ status: 'OK', insertId:q.insertId });
+
+    } catch (e){
+      console.log(e);
+      res.json({ status: 'NOT OK' });
+    }
+
+
+  })
 
 
   return apiRouter;

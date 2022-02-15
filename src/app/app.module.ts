@@ -17,10 +17,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CountriesComponent } from './countries/countries.component';
 import { CountryLeaguesComponent } from './countries/country-leagues/country-leagues.component';
 import {CountryFixturesComponent} from "./countries/country-leagues/country-fixtures/country-fixtures.component";
+import { SortingPipe } from './shared/sorting.pipe';
 
 
-// @ts-ignore
-// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +31,8 @@ import {CountryFixturesComponent} from "./countries/country-leagues/country-fixt
     FixturesComponent,
     CountriesComponent,
     CountryLeaguesComponent,
-    CountryFixturesComponent
+    CountryFixturesComponent,
+    SortingPipe
 
 
   ],

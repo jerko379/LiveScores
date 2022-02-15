@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {fixture} from "../model";
+import {fixture, user} from "../model";
 import {HttpClient} from "@angular/common/http";
+import {AuthService} from "../shared/auth.service";
 
 
 @Component({
@@ -9,16 +10,19 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
+  user : user;
+  authed = false;
   matches:fixture[] = [];
   day : string = new Date().toISOString().split('T')[0];
-  constructor() {
+  constructor(private auth:AuthService) {
   }
 
   ngOnInit(): void {
-
     this.getMatches();
     console.log(this.matches)
     console.log(this.day);
+    this.user=this.auth.getUser();
+    this.authed=this.auth.isAuthenticated();
   }
 
   getMatches() {

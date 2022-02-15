@@ -1,4 +1,4 @@
-<form class="signin-form" fxLayout="column" fxLayoutAlign="center center" (submit)="onRegister()">
+<form [formGroup]="RegisterForm" class="signin-form" fxLayout="column" fxLayoutAlign="center center" (submit)="onRegister()">
   <fieldset class="form-group">
     <input type="text" formControlName="username"  placeholder="Enter username" [(ngModel)]="noviUser.username">
   </fieldset>
@@ -12,12 +12,12 @@
     <input type="text" formControlName="name" placeholder="Enter your name" [(ngModel)]="noviUser.name">
   </fieldset>
   <fieldset class="form-group">
-    <input type="text" formControlName="surname" placeholder="Enter your name" [(ngModel)]="noviUser.name">
+    <input type="text" formControlName="surname" placeholder="Enter your surname" [(ngModel)]="noviUser.surname">
   </fieldset>
   <fieldset class="form-group">
     <input type="email" formControlName="email" placeholder="Enter your e-mail" [(ngModel)]="noviUser.email">
   </fieldset>
-  <button type="submit" [disabled]="signinForm.invalid">Register</button>
+  <button type="submit" [disabled]="RegisterForm.invalid">Register</button>
   <div *ngIf="errorMessage">{{errorMessage}}</div>
 </form>
 

@@ -6,6 +6,8 @@ const config = require('./config');
 const morgan = require("morgan");
 const pool = mysql.createPool(config.pool);
 const api = require("./api");
+const auth= require("./auth")
+const crypto = require('crypto');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -26,13 +28,12 @@ app.use(function(req, res, next) {
 
 
 
-
-
-
-
 apiRouter = api(express,pool);
 
 app.use('/api', apiRouter);
+
+authRouter = auth(express,pool);
+app.use('/auth',authRouter)
 
 app.get('*', function (req, res) {
 

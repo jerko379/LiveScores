@@ -83,10 +83,14 @@ export class LiveComponent implements OnInit {
           });
 
         })
-        this.matches.sort((a, b) =>  {
+       /* this.matches.sort((a, b) =>  {
           return b.elapsed - a.elapsed;
         });
+
+        */
+
       });
+
   }
 }
 

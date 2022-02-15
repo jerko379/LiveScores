@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {country} from "../model";
+import {DataService} from "../shared/data.service";
 
 @Component({
   selector: 'app-countries',
@@ -10,12 +11,12 @@ import {country} from "../model";
 export class CountriesComponent implements OnInit {
   countries :  country[] = [];
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private dataService: DataService) { }
 
   ngOnInit(): void {
 
-    this.http.get('http://localhost:8081/api/countries')
-      .subscribe(res => {
+
+      this.dataService.getCountries().subscribe(res => {
         console.log(res['countries'][0]);
         this.countries=res['countries'][0];
       })
@@ -26,7 +27,7 @@ export class CountriesComponent implements OnInit {
 
   delete(idDelete:number) {
     let dFixture=this.countries[idDelete];
-    this.http.delete('http://localhost:8081/api/countries/' + dFixture["code"])
+    this.dataService.deleteCountry(dFixture["code"])
       .subscribe(res => {
         console.log(res['status']);
         if ( res['status'] == 'OK' ) {

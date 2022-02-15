@@ -33,7 +33,7 @@ export class league {
 
 export class user {
   idUser?:number;
-  privilege:boolean;
+  privilege:number;
   username:string;
   name:string;
   surname:string;
