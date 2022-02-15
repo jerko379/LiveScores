@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import {Route, RouterModule} from "@angular/router";
 import {MainPageComponent} from "./main-page/main-page.component";
 import {LiveComponent} from "./live/live.component";
-import {LeagueComponent} from "./league/league.component";
+import {LeagueComponent} from "./leagues/league.component";
 import {FixtureComponent} from "./fixture/fixture.component";
 import {AuthModule} from "./auth/auth.module";
-import {FixturesComponent} from "./league/fixtures/fixtures.component";
+import {FixturesComponent} from "./leagues/fixtures/fixtures.component";
+import {CountriesComponent} from "./countries/countries.component";
+import {CountryLeaguesComponent} from "./country/country-leagues/country-leagues.component";
+import {CountryFixturesComponent} from "./country/country-leagues/country-fixtures/country-fixtures.component";
 
 
 const routes : Route[] = [
@@ -13,7 +16,10 @@ const routes : Route[] = [
   {path:'live', component:LiveComponent},
   {path:'leagues', component:LeagueComponent},
   {path:'fixture/:id' , component:FixtureComponent},
-  {path:'leagues/:id' , component:FixturesComponent},
+  {path:'leagues/fixtures/:id' , component:FixturesComponent},
+  {path:'countries/leagues/:id' , component:CountryFixturesComponent},
+  {path:'countries' , component:CountriesComponent},
+  {path:'countries/:code' , component:CountryLeaguesComponent},
   {path:'auth', loadChildren: () => AuthModule}
 ];
 @NgModule({

@@ -15,10 +15,10 @@ export class fixture {
 
 }
 export class country {
-  id?:number;
+  idCountry?:number;
   name?:string;
   code?:string;
-  urlFlag?:string;
+  flag?:string;
 
 }
 

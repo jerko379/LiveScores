@@ -1,0 +1,9 @@
+<div>
+  <table class="table table-hover table-bordered table-dark"><tbody>
+  <tr  [routerLink]="[c.code]"  *ngFor="let c of countries ; let i = index;" style="font-size:16px">
+    <td><img src="{{c.flag}}" width="40px" height="20px" alt="">  {{c.name}}    </td>
+  </tr>
+  </tbody>
+  </table>
+
+</div>

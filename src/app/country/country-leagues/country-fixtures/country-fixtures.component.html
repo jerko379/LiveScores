@@ -1,9 +1,7 @@
 <div id="wrapper">
-  <form>
-    <div  class="form-group bg-dark"><input name="dayPicker" [(ngModel)]='day'  type="date" (change)="getMatches()"   ></div>
-    </form>
+
   <table class="table table-hover table-bordered table-dark"><tbody>
-  <tr [routerLink]="['fixture',ut.idFixture]" *ngFor="let ut of matches ; let i = index;" style="font-size:16px"> <td>{{ut.dateTime.toLocaleTimeString().split(':',2).join(':')}}</td>
+  <tr [routerLink]="['../../../fixture',ut.idFixture]" *ngFor="let ut of fixtures ; let i = index;" style="font-size:16px"> <td>{{ut.dateTime.toLocaleTimeString().split(':',2).join(':')}}</td>
     <td>{{ut.nameHome}} <span style="float:right;color:red" *ngIf="ut.shortStatus == '1H' || ut.shortStatus == 'HT' || ut.shortStatus == '2H' "> {{ut.elapsed}} </span>
       <span style="float:right" *ngIf="ut.shortStatus == 'SUSP' || ut.shortStatus == 'INT' || ut.shortStatus == 'PST'
        || ut.shortStatus == 'CANC' || ut.shortStatus == 'ABD' || ut.shortStatus == 'AWD'"> {{ut.longStatus}} </span>  <br> {{ut.nameAway}}    </td>

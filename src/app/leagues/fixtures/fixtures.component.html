@@ -1,0 +1,19 @@
+<div>
+  <table class="table table-hover table-bordered table-dark">
+
+    <tbody>
+
+    <tr    *ngFor="let ut of fixtures ; let i = index;" style="font-size:16px"> <td [routerLink]="['../../../fixture',ut.idFixture]" >{{ut.dateTime.toLocaleString().split(':',2).join(':')}}</td>
+      <td  [routerLink]="['../../../fixture',ut.idFixture]" >{{ut.nameHome}} <span *ngIf="!(ut.shortStatus == 'SUSP' || ut.shortStatus == 'INT' || ut.shortStatus == 'PST'
+       || ut.shortStatus == 'CANC' || ut.shortStatus == 'ABD' || ut.shortStatus == 'AWD')" style="float:right" class="elapsedLive" > {{ut.elapsed}} </span> <span style="float:right" *ngIf="ut.shortStatus == 'SUSP' || ut.shortStatus == 'INT' || ut.shortStatus == 'PST'
+       || ut.shortStatus == 'CANC' || ut.shortStatus == 'ABD' || ut.shortStatus == 'AWD'"> {{ut.longStatus}} </span>  <br> {{ut.nameAway}} </td> <td [routerLink]="['../../../fixture',ut.idFixture]"  class="scoreLive"> {{ut.goalsHome}} <br> {{ut.goalsAway}}</td>
+      <td><button class="btn btn-danger"  (click)="delete(i)">Delete</button>
+      </td>
+      <td><button class="btn btn-warning"  (click)="invalidate(ut)">Invalidate</button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>

@@ -6,14 +6,17 @@ import { MainPageComponent } from './main-page/main-page.component';
 import {AppRoutingModule} from "./routing";
 import { NavComponent } from './shared/nav/nav.component';
 import { LiveComponent } from './live/live.component';
-import { LeagueComponent } from './league/league.component';
+import { LeagueComponent } from './leagues/league.component';
 import { FixtureComponent } from './fixture/fixture.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {AuthModule} from "./auth/auth.module";
 import {AuthRoutingModule} from "./auth/auth-routing.module";
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { FixturesComponent } from './league/fixtures/fixtures.component';
+import { FixturesComponent } from './leagues/fixtures/fixtures.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CountriesComponent } from './countries/countries.component';
+import { CountryLeaguesComponent } from './country/country-leagues/country-leagues.component';
+import {CountryFixturesComponent} from "./country/country-leagues/country-fixtures/country-fixtures.component";
 
 
 // @ts-ignore
@@ -27,6 +30,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     LeagueComponent,
     FixtureComponent,
     FixturesComponent,
+    CountriesComponent,
+    CountryLeaguesComponent,
+    CountryFixturesComponent
 
 
   ],
